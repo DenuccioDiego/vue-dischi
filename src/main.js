@@ -1,5 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
+import "@fontsource/montserrat"
+import "@fontsource/montserrat/700.css"
+import "@fontsource/montserrat/500.css"
+import "@fontsource/montserrat/100.css"
 
 Vue.config.productionTip = false
 
