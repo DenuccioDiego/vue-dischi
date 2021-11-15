@@ -1,34 +1,25 @@
 <template>
   <div id="app">
-    <div class="row">
-      <div class="col-xs|sm|md|lg|xl-1-12">
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title">Title</h3>
-            <p class="card-text">Text</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs|sm|md|lg|xl-1-12">
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title">Title</h3>
-            <p class="card-text">Text</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
+
+    <SiteHeader />
+    <SiteMain />
+
+
+     
   </div>
 </template>
 
 <script>
+import SiteHeader from "./components/SiteHeader.vue"
+import SiteMain from "./components/SiteMain.vue"
 import axios from "axios"
+
 
 export default {
   name:"App",
   components: {
-    
+    SiteHeader,
+    SiteMain,
   },
   mounted(){
     axios
