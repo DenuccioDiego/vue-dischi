@@ -1,10 +1,9 @@
 <template>
      <div id="site_main">
-          <div class="container_cards">
      
-               <Card_song />     
+          <Card_song />     
      
-          </div>
+          
      </div>
      
 </template>
@@ -22,7 +21,7 @@ export default {
 <style scoped lang="scss">
 #site_main{
      background-color: #1e2d3b;
-     
+     height: 100vh;
 }
 
 

@@ -1,12 +1,11 @@
 <template>
      
-     <div>
-          
-          <div class="row justify-content-center gutter-cards m-0 pt-5">
-               <div class="col-2 card text-center" v-for="song in songs" :key="song.author">
-                    <img :src="song.poster" class="card-img-top" :alt="song.author">
-                    <div class="card-body color_card">
-                         <h5 class="card-title">{{song.title}}</h5>
+          <div id="card-song" class="row justify-content-center gutter-cards m-0 pt-5">
+               <div class="col-2 card text-center " v-for="song in songs" :key="song.author">
+                    
+                    <div class="card-body color_card p-4">
+                         <img :src="song.poster" class="card-img-top" :alt="song.author">
+                         <h3 class="card-title py-3">{{song.title}}</h3>
                          
                          <p class="card-text">
                               <small class="text-muted">{{song.author}}</small><br>
@@ -15,7 +14,6 @@
                     </div>
                </div>
           </div>    
-     </div>
 
 </template>
 
@@ -45,17 +43,22 @@ export default{
 </script>
 
 <style scoped lang="scss">
+small{
+     font-weight: 500;
+}
 
+h3{
+     font-weight: 700;
+
+}
 .color_card{
      background-color: #2e3a46;
-
 }
 
 .card{
      
      border:none;
      background-clip: content-box;
-     background-color: transparent;
 }
 
 .card-img-top{
@@ -71,4 +74,6 @@ export default{
 .card-title{
      color:white;
 }
+
+
 </style>
