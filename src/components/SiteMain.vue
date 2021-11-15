@@ -1,6 +1,6 @@
 <template>
      <div id="site_main">
-          <div class="container">
+          <div class="container_cards">
      
                <Card_song />     
      
@@ -22,8 +22,10 @@ export default {
 <style scoped lang="scss">
 #site_main{
      background-color: #1e2d3b;
-     height: 90vh;
+     
 }
+
+
 
 
 </style>
