@@ -1,6 +1,6 @@
 <template>
-     
-          <div id="card-song" class="row justify-content-center gutter-cards m-0 pt-5">
+     <div>
+          <div v-if="!loading" id="card-song" class="row justify-content-center gutter-cards m-0 pt-5">
                <div class="col-2 card text-center " v-for="song in songs" :key="song.author">
                     
                     <div class="card-body color_card p-4">
@@ -13,7 +13,14 @@
                          </p>
                     </div>
                </div>
-          </div>    
+          </div> 
+
+          <div class="loading" v-else>
+               <span>loading...</span>
+          </div>
+
+     </div>
+             
 
 </template>
 
@@ -24,21 +31,31 @@ export default{
 
      data(){
           return{
-               songs : []
-          }
+               songs : [],
+               loading : true,
+               error : "",
+          };
      },
 
-    mounted(){
-    axios
-    .get("https://flynn.boolean.careers/exercises/api/array/music")
-    .then(r=>{
-      console.log(r.data.response);
-      this.songs = r.data.response
+     mounted(){
+          setTimeout(this.callApi, 5000);
+     },
+   
+     methods: {
+          callApi(){
+               axios
+               .get("https://flynn.boolean.careers/exercises/api/array/music")
+               .then(r=>{
+                    console.log(r.data.response);
+                    this.songs = r.data.response;
+                    this.loading = false;
 
-    }).catch(e=>{
-      console.log(e,"Ops")
-    })
-  }
+               }).catch(e=>{
+                    console.log(e,"Ops");
+                    this.error = "Ops ${e}";
+               })
+          }
+     }
 }
 </script>
 
@@ -75,5 +92,9 @@ h3{
      color:white;
 }
 
-
+.loading{
+     color: white;
+     font-size: 8rem;
+     text-align: center;
+}
 </style>
