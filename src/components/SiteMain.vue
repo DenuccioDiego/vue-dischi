@@ -1,6 +1,7 @@
 <template>
      <div id="site_main">
-     
+          
+          
           <Card_song />     
      
           
@@ -11,8 +12,10 @@
 <script>
 import Card_song from "./CardSong.vue"
 
+
 export default {
      components:{
+          
           Card_song,
      },
 }

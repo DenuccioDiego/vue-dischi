@@ -1,5 +1,6 @@
 <template>
      <div>
+          <Search_bar />
           <div v-if="!loading" id="card-song" class="row justify-content-center gutter-cards m-0 pt-5">
                <div class="col-2 card text-center " v-for="song in songs" :key="song.author">
                     
@@ -26,8 +27,13 @@
 
 <script>
 import axios from "axios"
+import Search_bar from "./SearchBar.vue"
 
 export default{
+
+     components:{
+          Search_bar,
+     },
 
      data(){
           return{
@@ -38,7 +44,7 @@ export default{
      },
 
      mounted(){
-          setTimeout(this.callApi, 5000);
+          setTimeout(this.callApi, 1000);
      },
    
      methods: {
